@@ -1,0 +1,13 @@
+<!doctype html><meta charset="utf-8">
+<title>Mini UGV Panel</title>
+<h2>Health: <span id="health">...</span></h2>
+<pre id="imu">{}</pre>
+<script>
+async function tick(){
+  try{
+    const h = await fetch('/health'); document.getElementById('health').textContent = (await h.json()).status;
+    const i = await fetch('/telemetry/imu/last'); document.getElementById('imu').textContent = JSON.stringify(await i.json(), null, 2);
+  }catch(e){ console.log(e); }
+}
+setInterval(tick, 1000); tick();
+</script>

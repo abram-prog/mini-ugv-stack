@@ -1,0 +1,1 @@
+recursive-include ros2_mqtt_bridge_py/static *

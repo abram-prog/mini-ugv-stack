@@ -1,0 +1,42 @@
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    ports: ["1883:1883"]
+    restart: unless-stopped
+
+  imu_publisher:
+    image: mini-stack:latest
+    command: >
+      bash -lc "source /opt/ros/humble/setup.bash &&
+                source /ros2_ws/install/setup.bash &&
+                exec ros2 run sensor_driver_cpp imu_publisher"
+    environment:
+      ROS_DOMAIN_ID: "42"
+    depends_on: [mosquitto]
+    restart: unless-stopped
+
+  health_node:
+    image: mini-stack:latest
+    command: >
+      bash -lc "source /opt/ros/humble/setup.bash &&
+                source /ros2_ws/install/setup.bash &&
+                exec ros2 run control_services_py health_node"
+    environment:
+      ROS_DOMAIN_ID: "42"
+    depends_on: [imu_publisher]
+    restart: unless-stopped
+
+  bridge:
+    image: mini-stack:latest
+    command: >
+      bash -lc "source /opt/ros/humble/setup.bash &&
+                source /ros2_ws/install/setup.bash &&
+                export MQTT_HOST=mosquitto MQTT_PORT=1883 &&
+                exec ros2 run ros2_mqtt_bridge_py bridge"
+    environment:
+      ROS_DOMAIN_ID: "42"
+      MQTT_HOST: "mosquitto"
+      MQTT_PORT: "1883"
+    ports: ["8000:8000"]
+    depends_on: [mosquitto, health_node]
+    restart: unless-stopped
