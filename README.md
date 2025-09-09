@@ -11,7 +11,6 @@
   <img src="docs/img/ui.jpg" alt="Operator UI" width="640">
 </p>
 
-![UI Screenshot](docs/img/ui.jpg)
 
 ## 🚀 Quickstart
 
