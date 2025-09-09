@@ -8,7 +8,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
 <p align="center">
-  <img src="docs/img/ui.jpg" alt="Operator UI" width="640">
+  <img src="docs/img/ui.jpg" alt="Operator UI" width="300">
 </p>
 
 
