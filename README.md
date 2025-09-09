@@ -21,4 +21,4 @@ ros2 run ros2_mqtt_bridge_py bridge
 ./video/gst_tx.sh 127.0.0.1 5004   # sender (or VIDEO_FILE=sample.mp4 ...)
 
 ### UI (Operator Panel)
-![UI Screenshot](docs/img/205109.jpg)
+![UI Screenshot](docs/img/ui.jpg)
