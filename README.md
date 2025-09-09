@@ -19,3 +19,6 @@ ros2 run ros2_mqtt_bridge_py bridge
 # 4) Video (optional)
 ./video/gst_rx.sh 5004             # receiver
 ./video/gst_tx.sh 127.0.0.1 5004   # sender (or VIDEO_FILE=sample.mp4 ...)
+
+### UI (Operator Panel)
+![UI Screenshot](docs/img/205109.jpg)
