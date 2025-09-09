@@ -1,3 +1,16 @@
+# Mini-UGV Stack
+
+![ROS 2: Humble](https://img.shields.io/badge/ROS2-Humble-22314E?logo=ros&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10%20|%203.11-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![MQTT](https://img.shields.io/badge/MQTT-paho--mqtt-660066?logo=eclipsemosquitto&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04-E95420?logo=ubuntu&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+
+<p align="center">
+  <img src="docs/img/ui.jpg" alt="Operator UI" width="640">
+</p>
+
 ![UI Screenshot](docs/img/ui.jpg)
 
 ## 🚀 Quickstart
